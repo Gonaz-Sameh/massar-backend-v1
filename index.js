@@ -42,7 +42,10 @@ app.options('*', cors());
 app.use(compression());
 
 // Middlewares
-app.use(express.json());
+//app.use(express.json()); 100kb
+// Increase payload limit to 1MB
+app.use(express.json({ limit: '1mb' }));
+
 app.use(express.static(path.join(__dirname, 'uploads')));
 
 if (process.env.NODE_ENV === 'development') {
