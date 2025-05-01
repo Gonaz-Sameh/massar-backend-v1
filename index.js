@@ -43,8 +43,8 @@ app.use(compression());
 
 // Middlewares
 //app.use(express.json()); 100kb
-// Increase payload limit to 1MB
-app.use(express.json({ limit: '1mb' }));
+// Increase payload limit to 10MB
+app.use(express.json({ limit: '10mb' }));
 
 app.use(express.static(path.join(__dirname, 'uploads')));
 
