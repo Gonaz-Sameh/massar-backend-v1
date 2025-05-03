@@ -55,7 +55,7 @@ if (process.env.NODE_ENV === 'development') {
 
 // WebSocket for real-time location
 io.on("connection", (socket) => {
-  console.log("Driver/viewer connected");
+  console.log("Frontend Driver Connected : " , socket.id);
 
   socket.on("locationUpdate", async ({tripId,routeId, busId, lat, lng }) => {
 

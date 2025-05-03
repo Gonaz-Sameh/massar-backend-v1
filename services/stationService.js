@@ -11,7 +11,12 @@ const Station = require('../models/station.model');
 // @desc    Get list of rideTypes
 // @route   GET /api/v1/rideTypes
 // @access  Public
-exports.getStations = factory.getAll(Station);
+exports.getStations = asyncHandler( async (req, res) => {
+  
+    const routes = await Station.find();
+    res.json(routes);
+
+})
 
 // @desc    Get specific rideType by id
 // @route   GET /api/v1/rideTypes/:id

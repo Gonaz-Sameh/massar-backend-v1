@@ -67,6 +67,6 @@ exports.getTrip =asyncHandler(async (req, res) => {
 // GET /api/v1/trips/by-route/:routeId
 exports.getTripsByRoute = asyncHandler(async (req, res) => {
   const { routeId } = req.params;
-  const trips = await Trip.find({ route: routeId }); // optional: populate bus
+  const trips = await Trip.find({ route: routeId },"_id startedAt endedAt status"); // optional: populate bus
   res.json(trips);
 });
