@@ -14,7 +14,8 @@ const busSchema = new mongoose.Schema({
   },
 
   isAvailable: { type: Boolean, default: true }
-});
+},
+{ timestamps: true });
 
 const Bus = mongoose.model('Bus', busSchema);
 
